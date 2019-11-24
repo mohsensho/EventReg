@@ -1,0 +1,107 @@
+body {
+    background: black;
+    /* margin: auto; */
+
+}
+p,h3 {
+    color: #e0f7fa;
+
+}
+/* div {
+    padding-left: 10px;
+    /* padding-top: 10px; */
+    /* align-content: center;
+  } */
+  
+
+
+
+/* .container {
+  padding-bottom: 20px
+
+} */
+
+.mbvcs {
+ 
+  font-size: 40px;
+  color: #FDFDFD;
+}
+
+ /* css for events.html */
+
+ tbody {
+  display:block;
+  height:400px;
+  overflow:auto;
+  margin: 0px;
+  padding: 0px;
+  }
+  thead, tbody tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+  }
+  thead {
+  width: calc( 100% - 1em )
+  }
+  table {
+  width:100%;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  .datepicker-table-wrapper  {
+      background-color: #999;
+
+
+  }
+/* CSS for Admin */
+/* .active {
+  background-color: chartreuse;
+
+} */
+
+
+/* #shift-picker {
+
+} */
+
+
+
+
+
+  @media only screen and (max-width: 600px) {
+    /* body {
+      /* background-color: lightblue; */
+      /* max-width: 1000px; */
+    /* } */ 
+ 
+
+.mbvcs {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 20px;
+  /* color: yellow; */
+}
+
+#main-logo {
+  width: 140px;
+}
+
+.mobileghost {
+  display:none
+}
+
+td {
+  padding: 2px;
+}
+
+.chk {
+  padding-left:22px !important;
+  
+  
+}
+
+}

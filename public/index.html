@@ -1,0 +1,156 @@
+<!-- UI test -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="styles/mainstyle.css">
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <br>
+  <div class="parallax-container">
+    <div class="parallax"><img src="images/cockpit.jpg"></div>
+  </div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 class="black-text">Volunteer Rules</h4>
+      <p class="black-text">Thanks for Volunteering with Murderboat Productions!
+
+          All Shifts each earn (1) adult 21+ ticket.
+          
+          Shift duration varies based on the time the volunteer will be able to participate in the event.
+          Shifts before/after the event are longer but allow volunteers to enjoy the entire event, while shifts occurring during the event are shorter.
+          
+          Volunteers will be required to purchase a purchase a ticket to the event, unless otherwise noted. The ticket will be refunded within a week of the event after your full shift is worked. In order to guarantee your refund, you need to check in with our volunteer coordinator at the beginning and the end of your shift.
+          
+          Volunteers must agree to the following rules:
+          - You must be sober during your shift. Volunteers that are not sober will not be allowed to work their shift and will not have their tickets refunded
+          - Please show up to your shift on time and check in with the volunteer coordinator at the front desk. Volunteers who do not check in may not get credit for working their shift.
+          - Volunteers that are more than 15 minutes late will be asked to stay longer to make up the rest of the time on their shift, in order to have their ticket price refunded.
+          - If you are going to miss your shift, please email <a href="volunteers@murderboat.com">volunteers@murderboat.com</a> at least 24 hours prior. Missing a shift or breaking the rules means you will not be allowed to volunteer for other Murderboat Production events.
+          - Volunteers are required to wear the provided sticky name tag during their entire shift. It is to be removed at the end of your shift.
+          - Volunteers are not representatives or staff members of the Murderboat Production team.
+          
+          Please email volunteers@murderboat.com with any additional questions. Staff will email you prior to the event with additional information and to confirm your shift.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
+
+  <div class="section black white-text">
+    <div class="row container">
+      <div class="col s12 m4 push-m8 center-align">
+        <img src="images/murderboat_logo.png" class="responsive-img" id="main-logo">
+      </div>
+      <div class="col s12 m8 pull-m4">
+        <span><p class="mbvcs">Manifest VCS Login</p>
+         <!-- Modal Trigger -->
+          <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Volunteer Rules</a>
+        </span>
+        <br>
+
+
+        <p class="flow-text-sm mobileghost">Volunteer Coordination System - Please login or register to volunteer with
+          us!
+          <br>If you have any additional questions, please contact us at <a href="mailto:volunteers@murderboat.com"
+            target="_blank">volunteers@murderboat.com</a>!
+          <br>Read volunteer policy at: <a href="http://www.murderboat.com/volunteers"
+            target="_blank">www.murderboat.com/volunteers</a></p>
+
+
+      </div>
+    </div>
+
+    <div class="row container">
+      <form method="POST" role="form" class="col s12">
+        <div class="row">
+          <div class="input-field-sm col s12">
+            <input id="email" type="email" class="validate white-text" name="email">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field-sm col s12 white-text">
+            <input id="password" type="password" autocomplete="current-password" class="validate white-text" name="password">
+            <label for="password">Password</label>
+          </div>
+        </div>
+      </form>
+
+      <div class="col s12">
+        <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+
+
+    <div class="row container">
+      <div class="col s8">
+        <p>First time? register below..</p>
+        <a href="./register" class="waves-effect waves-light btn" id="register-btn">Register</a>
+      </div>
+      <div class="col s4 right-align">
+        <div class="center-align">
+          <p>Admin</p>
+          <a href="./admin" class="btn-floating btn-large waves-effect waves-light"><i
+              class="material-icons">directions_boat</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="images/blanketfort.jpg"></div>
+  </div>
+
+  <!--JavaScript at end of body for optimized loading-->
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <script>
+    //  for parallax
+    $(document).ready(function () {
+      $('.parallax').parallax();
+    });
+
+  // for modal
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+
+  //active JS
+
+    $("#submit").on("click", function (event) {
+      event.preventDefault();
+      var userLogin = {
+        email: $("#email").val().trim(),
+        password: $("#password").val().trim(),
+      };
+
+      // what about the callback?
+      $.post("/api/login", userLogin)
+        .then(data => {
+          location.href= "/events";
+        }).catch(err => {
+          M.toast({ html: "User name or password is incorrect" });
+        });
+    });
+
+  </script>
+</body>
+
+</html>

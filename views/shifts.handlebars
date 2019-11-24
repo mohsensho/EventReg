@@ -1,0 +1,43 @@
+<div class="section black white-text">
+  <div class="row container">
+    <div class="col s12 m4 push-m8 center-align">
+      <img src="/images/murderboat_logo.png" class="responsive-img" id="main-logo">
+    </div>
+    <div class="col s12 m8 pull-m4">
+      <p class="mbvcs">Manifest VCS Register</p><br>
+      <p class="flow-text-sm mobileghost">Volunteer Coordination System - Please login or register to volunteer with us!
+        <br>If you have any additional questions, please contact us at <a
+          href="volunteers@murderboat.com">volunteers@murderboat.com!</a>
+        <br>Read volunteer policy at: <a href="www.murderboat.com/volunteers">www.murderboat.com/volunteers</a></p>
+
+
+    </div>
+  </div>
+  <div class="row container white black-text">
+    <div id="shift-picker" class="responsive-table table-status-sheet">
+      <table class="bordered">
+        <thead>
+          <tr>
+            <th>Shift Position</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tbodyShifts">
+          {{#each shifts}}
+          <tr>
+            <td>{{position}}</td>
+            <td>{{startTime}}</td>
+            <td>{{endTime}}</td>
+            <td class="right-align">
+              <button class="shiftSignUp waves-effect waves-light btn" data-id="{{shiftId}}">Join!</button>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="/js/shifts.js"></script>

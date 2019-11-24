@@ -1,0 +1,77 @@
+<div class="section black white-text">
+  <div class="section">
+    <div class="row container">
+      <div class="col s12 m4 push-m8 center-align">
+        <img src="images/murderboat_logo.png" class="responsive-img" id="main-logo">
+      </div>
+      <div class="col s12 m8 pull-m4">
+        <p class="mbvcs">Manifest VCS Admin</p>Ahoy Captain!<br>
+        <p class="flow-text-sm mobileghost">Step the Mast! Hoist Sail!</p>
+
+
+      </div>
+    </div>
+
+    <div class="container row">
+      <div class="col s12 no-padding">
+        <ul class="tabs">
+          {{#each events}}
+          <li class="tab col"><a class="active" href="#{{eventId}}">{{eventName}}</a></li>
+          {{/each}}
+
+        </ul>
+      </div>
+
+      <div class="row white black-text">
+        <div id="shift-picker" class="responsive-table table-status-sheet">
+          {{#each events}}
+          <table id="{{eventId}}" class="bordered">
+            <thead>
+              <tr>
+                <th class="center">Position</th>
+                <th class="center">Start</th>
+                <th class="center">End</th>
+                <th class="center">Volunteer</th>
+                <th class="center">Check in</th>
+                <th class="center">Check out</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {{#each this.eventShifts}}
+              <tr>
+                <td>{{position}}</td>
+                <td>{{startTime}}</td>
+                <td>{{endTime}}</td>
+                <td>{{#if userId}} {{firstName}} {{lastName}} {{/if}}</td>
+                <td>
+                  <label>
+                    <input data-checktype="checkedIn" data-id="{{shiftId}}" type="checkbox" {{#if checkedIn}} checked disabled {{/if}} />
+                    <span class="chk">IN</span>
+                  </label>
+                </td>
+                <td>
+                  <label>
+                    <input data-checktype="checkedOut" data-id="{{shiftId}}" type="checkbox" {{#unless checkedIn }} disabled {{/unless}} {{#if checkedOut}} checked disabled {{/if}}/>
+                    <span class="chk">OUT</span>
+                  </label>
+                </td>
+              </tr>
+              {{/each}}
+
+            </tbody>
+          </table>
+          {{/each}}
+        </div>
+      </div>
+      <div class="row container">
+        <div class="col s4 right-align">
+          <div class="center-align">
+            <p>Admin</p>
+            <a href="/admin" class="btn-floating btn-large waves-effect waves-light"><i
+                class="material-icons">directions_boat</i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/admin.js"></script>

@@ -1,0 +1,42 @@
+{
+  "name": "node-handlebars-boilerplate",
+  "version": "1.0.0",
+  "description": "Project 2 Starter",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
+    "test": "cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^6.2.0",
+    "emailjs": "^2.2.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mysql2": "^1.6.4",
+<<<<<<< HEAD
+    "path": "^0.12.7",
+=======
+    "nodemailer": "^6.1.1",
+    "nodemailer-ntlm-auth": "^1.0.1",
+>>>>>>> e3736af95a2a1f47240a035dc83f5c83548a0604
+    "sequelize": "^4.41.2",
+    "twilio": "^3.30.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "mocha": "^5.2.0",
+    "prettier": "^1.13.7"
+  }
+}
